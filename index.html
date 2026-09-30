@@ -1,0 +1,228 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brilliant Hostel | Student Booking</title>
+    <meta name="description" content="Check room availability and reserve your student room at Brilliant Hostel. Choose your section, see the semester price and book online." />
+    <meta property="og:title" content="Brilliant Hostel | Student Booking" />
+    <meta property="og:description" content="Real-time room availability and easy booking for students." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="#" class="logo">BRILLIANT<span>HOSTEL</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">&#9776;</button>
+      <nav id="mainNav">
+        <a href="#rooms">Rooms</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="#rooms" class="header-button">Book a Room</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Student accommodation made simple</p>
+          <h1>Your comfortable space,<br />ready for the semester.</h1>
+          <p class="hero-text">Check room availability, choose your preferred section, and reserve your place at Brilliant Hostel.</p>
+          <a href="#rooms" class="primary-button">Explore Available Rooms</a>
+        </div>
+        <div class="hero-card">
+          <p class="hero-card-label">Booking fee</p>
+          <strong>UGX 100,000</strong>
+          <span>One-time reservation fee, deducted from your semester rent. See the refund policy below.</span>
+          <div class="hero-card-line"></div>
+          <p>Sections available</p>
+          <div class="section-dots"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span></div>
+        </div>
+      </section>
+
+      <section class="booking-section" id="rooms">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Find your room</p>
+            <h2>Available rooms</h2>
+            <p>Choose a section and room type that suits your semester budget.</p>
+          </div>
+          <div class="availability-key">
+            <span><i class="key available"></i> Available</span>
+            <span><i class="key booked"></i> Reserved</span>
+          </div>
+        </div>
+
+        <div class="section-tabs" id="sectionTabs" role="group" aria-label="Hostel sections"></div>
+
+        <div class="filters">
+          <label>Room type
+            <select id="filterType">
+              <option value="">All types</option>
+              <option>Single Room</option>
+              <option>Shared Room</option>
+              
+            </select>
+          </label>
+          <label>Max price per semester
+            <select id="filterPrice">
+              <option value="">Any price</option>
+              <option value="800000">Up to UGX 800,000</option>
+              <option value="1000000">Up to UGX 1,000,000</option>
+              <option value="1200000">Up to UGX 1,200,000</option>
+            </select>
+          </label>
+          <label class="check"><input type="checkbox" id="filterAvailable" /> Available only</label>
+        </div>
+
+        <div class="room-grid" id="roomGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="process-section" id="how-it-works">
+        <h2>How booking works</h2>
+        <div class="steps">
+          <article class="step">
+            <span>1</span>
+            <h3>Choose a room</h3>
+            <p>Select an available room and see the 
+              semester price and balance before booking.</p></article>
+          <article class="step">
+            <span>2</span>
+            <h3>Reserve your space</h3>
+            <p>Fill in your details, then pay the UGX 100,000 booking fee using the instructions shown.</p></article>
+          <article class="step">
+            <span>3</span>
+            <h3>Get confirmation</h3>
+            <p>Send your payment proof to the manager. Your room is confirmed once payment is verified.</p></article>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <h2>Frequently asked questions</h2>
+        <details>
+          <summary>Is the booking fee refundable?</summary>
+          <p>Non- refundable.</p></details>
+        <details>
+          <summary>How is the booking fee used?</summary>
+          <p>Its added on the semester rent.</p>
+        </details>
+        <details>
+          <summary>Are visitors allowed?</summary>
+          <p>EDIT THIS: Vistors allowed from 07:00am to 18:00.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div>
+        <a href="#" class="logo">BRILLIANT<span>HOSTEL</span></a>
+        <p>A welcoming home for students.</p>
+      </div>
+      <div class="contact-list">
+        <p>Phone / WhatsApp: <a href="tel:+256744221336">+256 744 221 336</a></p>
+        <p>Email: <a href="mailto:manager@brillianthostel.com">manager@brillianthostel.com</a></p>
+        <p>Location: EDIT THIS (address and distance to campus)</p>
+      </div>
+      <p>&copy; 2026 Brilliant Hostel. All rights reserved.</p>
+    </footer>
+
+    <div class="modal hidden" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content">
+        <button class="close-button" id="closeModal" aria-label="Close">&times;</button>
+
+        <div id="bookingFormArea">
+          <p class="eyebrow">Reserve your room</p>
+          <h2 id="modalTitle">Complete your booking</h2>
+
+          <div class="selected-room-box">
+            <div>
+              <span>Selected room</span><br />
+              <strong id="selectedRoomName">-</strong>
+              <p id="selectedRoomPrice">-</p>
+            </div>
+            <div class="balance">
+              <span>Balance after booking fee</span><br />
+              <strong id="selectedRoomBalance">-</strong>
+            </div>
+          </div>
+
+          <form id="bookingForm" novalidate>
+            <div class="form-row">
+              <label>Full name
+                <input type="text" id="studentName" placeholder="Your full name" autocomplete="name" required />
+              </label>
+              <label>Student number
+                <input type="text" id="studentNumber" placeholder="Your student number" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>Email address
+                <input type="email" id="studentEmail" placeholder="you@email.com" autocomplete="email" required />
+              </label>
+              <label>Phone number
+                <input type="tel" id="studentPhone" placeholder="07XX XXX XXX or +256 7XX XXX XXX" autocomplete="tel" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>Semester
+                <select id="semester" required>
+                  <option value="">Choose semester</option>
+                  <option>Semester 1</option>
+                  <option>Semester 2</option>
+                  <option>Semester 3</option>
+                </select>
+              </label>
+              <label>Payment method
+                <select id="paymentMethod" required>
+                  <option value="">Choose payment method</option>
+                  <option value="Mobile Money">Mobile Money</option>
+                  <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="payment-summary"><span>Booking fee</span><strong>UGX 100,000</strong></div>
+            <p class="payment-note">Submitting creates a booking request. Your room is held for you, but it is only confirmed after the manager verifies your payment. The booking fee is deducted from your semester rent.</p>
+            <p class="form-error" id="formError" role="alert"></p>
+            <button type="submit" class="primary-button full-button" id="submitBooking">Submit Booking Request</button>
+          </form>
+        </div>
+
+        <div class="receipt hidden" id="receiptArea">
+          <div class="success-icon pending">!</div>
+          <p class="eyebrow">Booking request received</p>
+          <h2>Now complete your payment</h2>
+
+          <div class="pay-instructions" id="payInstructions"></div>
+
+          <div class="receipt-card" id="receiptCard">
+            <div class="receipt-top"><span>BRILLIANT HOSTEL</span><strong>BOOKING REQUEST</strong></div>
+            <div class="receipt-details">
+              <p><span>Reference</span><b id="receiptNumber"></b></p>
+              <p><span>Student</span><b id="receiptStudent"></b></p>
+              <p><span>Room</span><b id="receiptRoom"></b></p>
+              <p><span>Semester</span><b id="receiptSemester"></b></p>
+              <p><span>Booking fee due</span><b>UGX 100,000</b></p>
+              <p><span>Balance after fee</span><b id="receiptBalance"></b></p>
+              <p><span>Status</span><b class="pending-text">PENDING PAYMENT</b></p>
+            </div>
+          </div>
+
+          <div class="receipt-actions">
+            <a class="whatsapp-button" id="notifyWhatsApp" href="#" target="_blank" rel="noopener">Send details to manager on WhatsApp</a>
+            <button class="secondary-button" id="printReceipt" type="button">Print / Save as PDF</button>
+            <button class="primary-button" id="finishBooking" type="button">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="hostel.js"></script>
+  </body>
+  </html>
